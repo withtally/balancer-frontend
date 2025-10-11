@@ -70,7 +70,7 @@ export enum RiskCategory {
 }
 
 export const RISK_TITLES: Partial<Record<RiskKey, string>> = {
-  [RiskKey.General]: `${PROJECT_CONFIG.projectName} protocol`,
+  [RiskKey.General]: `Balancer protocol`,
   [RiskKey.Weighted]: 'Weighted pool',
   [RiskKey.Stable]: 'Stable pool',
   [RiskKey.ComposableStable]: 'Composable stable pool',

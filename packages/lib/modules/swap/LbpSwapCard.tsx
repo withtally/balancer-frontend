@@ -9,14 +9,15 @@ export function LbpSwapCard() {
     <HStack
       align="center"
       border="1px solid"
-      borderColor="whiteAlpha.200"
+      borderColor="green.500"
       borderRadius="md"
       justify="flex-start"
       p="sm"
       w="full"
+      bg="rgba(0, 0, 0, 0.3)"
     >
       <NetworkIcon chain={pool.chain} size={6} />
-      <Text>{getChainName(pool.chain)}</Text>
+      <Text color="white" fontWeight="medium">{getChainName(pool.chain)}</Text>
     </HStack>
   )
 }

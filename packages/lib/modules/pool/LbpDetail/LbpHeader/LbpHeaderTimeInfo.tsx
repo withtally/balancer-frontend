@@ -12,7 +12,7 @@ function TimeElement({ title, value }: { title: string; value: string }) {
   return (
     <VStack>
       <Text
-        color="font.secondary"
+        color="gray.400"
         fontSize="10px"
         fontWeight="500"
         lineHeight="12px"
@@ -21,7 +21,7 @@ function TimeElement({ title, value }: { title: string; value: string }) {
         {title}
       </Text>
       <Text
-        color="font.primary"
+        color="white"
         fontFamily="monospace"
         fontSize="18px"
         fontWeight="500"
@@ -71,9 +71,9 @@ function Tile({ children }: PropsWithChildren) {
         />
       </Box>
       <Box
-        bg="background.level1"
+        bg="rgba(0, 0, 0, 0.6)"
         inset={0}
-        opacity={0.4}
+        opacity={0.8}
         overflow="hidden"
         position="absolute"
         rounded="lg"
@@ -135,16 +135,16 @@ export function LbpHeaderTimeInfo() {
         <HStack spacing="4" w="full">
           <HStack
             alignItems="center"
-            bg="green.400"
+            bg="green.500"
             borderRadius="sm"
-            color="black"
+            color="white"
             flex="1"
             h="full"
             justifyContent="start"
             px="2"
           >
             <Icon as={Clock} />
-            <Text color="black">{`LBP is live! Ends ${endTimeFormatted}`}</Text>
+            <Text color="white" fontWeight="medium">{`LBP is live! Ends ${endTimeFormatted}`}</Text>
           </HStack>
 
           <Countdown until={new Date(secondsToMilliseconds(lbpPool.endTime))} />

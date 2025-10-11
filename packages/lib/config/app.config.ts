@@ -16,6 +16,13 @@ export const config: Config = {
   networks,
 }
 
+// HWAVE LBP Configuration
+export const hwaveConfig = {
+  poolId: process.env.NEXT_PUBLIC_LBP_POOL_ID || '',
+  chain: process.env.NEXT_PUBLIC_LBP_CHAIN || 'SEPOLIA',
+  variant: process.env.NEXT_PUBLIC_LBP_VARIANT || 'v3',
+}
+
 export const isDev = process.env.NEXT_PUBLIC_APP_ENV === 'dev'
 export const isProd = process.env.NEXT_PUBLIC_APP_ENV === 'prod'
 export const isStaging = process.env.NEXT_PUBLIC_APP_ENV === 'staging'

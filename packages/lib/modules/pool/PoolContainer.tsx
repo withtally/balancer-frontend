@@ -9,8 +9,8 @@ import { isDev, isStaging } from '@repo/lib/config/app.config'
 export function PoolContainer() {
   const { pool } = usePool()
 
-  // TODO: only show in dev/staging for now
-  if (isV3LBP(pool) && (isDev || isStaging)) {
+  // Show LBP detail for all LBP pools
+  if (isV3LBP(pool)) {
     return <LbpDetail />
   }
 

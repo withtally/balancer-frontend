@@ -75,9 +75,8 @@ export function AcceptPoliciesModal() {
               onChange={e => setIsChecked(e.target.checked)}
               size="lg"
             >
-              {isBalancer ? (
                 <Box aria-label="Accept policies" color="font.primary" fontSize="md" mt="-3px">
-                  By connecting my wallet, I agree to Balancer Foundation&apos;s{' '}
+                  By connecting my wallet, I agree to Hyperwave Foundation&apos;s{' '}
                   <Link as={NextLink} href="/terms-of-use">
                     Terms of Use
                   </Link>
@@ -99,23 +98,6 @@ export function AcceptPoliciesModal() {
                   </Link>
                   .
                 </Box>
-              ) : isBeets ? (
-                <Box color="font.primary" fontSize="md" mt="-3px">
-                  By connecting my wallet, I agree to Beets&apos;{' '}
-                  <Link as={NextLink} href="/terms-of-service">
-                    Terms of Service
-                  </Link>
-                  .
-                </Box>
-              ) : (
-                <Box color="font.primary" fontSize="md" mt="-3px">
-                  By connecting my wallet, I agree to Cow&apos;s{' '}
-                  <Link as={NextLink} href="/terms-of-service">
-                    Terms of Service
-                  </Link>
-                  .
-                </Box>
-              )}
             </Checkbox>
           </VStack>
         </ModalBody>

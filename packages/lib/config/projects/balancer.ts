@@ -5,22 +5,11 @@ import { isProd } from '@repo/lib/config/app.config'
 
 export const ProjectConfigBalancer: ProjectConfig = {
   projectId: 'balancer',
-  projectName: 'Balancer',
-  projectUrl: 'https://balancer.fi',
+  projectName: 'Hyperwave',
+  projectUrl: 'https://lbp.hyperwavefi.xyz',
   projectLogo: 'https://balancer.fi/images/icons/balancer.svg',
   supportedNetworks: [
-    GqlChain.Mainnet,
-    GqlChain.Plasma,
-    GqlChain.Arbitrum,
-    GqlChain.Avalanche,
-    GqlChain.Base,
-    GqlChain.Gnosis,
     GqlChain.Hyperevm,
-    GqlChain.Optimism,
-    GqlChain.Polygon,
-    GqlChain.Zkevm,
-    GqlChain.Fraxtal,
-    GqlChain.Mode,
 
     // testnets only in dev mode
     ...(isProd ? [] : [GqlChain.Sepolia]),
@@ -34,7 +23,7 @@ export const ProjectConfigBalancer: ProjectConfig = {
     },
   },
   corePoolId: '0x5c6ee304399dbdb9c8ef030ab642b10820db8f56000200000000000000000014', // veBAL BAL8020 (Balancer 80 BAL 20 WETH) pool on Ethereum
-  defaultNetwork: GqlChain.Mainnet,
+  defaultNetwork: GqlChain.Hyperevm,
   ensNetwork: GqlChain.Mainnet,
   delegateOwner: '0xba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1b',
   externalLinks: {
@@ -44,13 +33,13 @@ export const ProjectConfigBalancer: ProjectConfig = {
   options: {
     poolDisplayType: PoolDisplayType.TokenPills,
     hidePoolTags: ['DYNAMIC_ECLP'],
-    hidePoolTypes: [GqlPoolType.Fx, ...(isProd ? [GqlPoolType.LiquidityBootstrapping] : [])],
+    hidePoolTypes: [GqlPoolType.Fx],
     hideProtocolVersion: [],
     showPoolName: false,
     showVeBal: true,
     showMaBeets: false,
     allowCreateWallet: true,
-    isOnSafeAppList: true,
+    isOnSafeAppList: false,
   },
   links: {
     appLinks: [{ href: '/vebal', label: 'veBAL' }],
