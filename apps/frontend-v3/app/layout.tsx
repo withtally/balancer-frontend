@@ -13,9 +13,9 @@ import { ThemeProvider } from '@bal/lib/services/chakra/ThemeProvider'
 
 export const metadata: Metadata = {
   title: `HWAVE Token Launch - Hyperwave`,
-  description: `The first ever liquid token (hwHLP) that accrues yield from the Hyperliquidity Provider vaults (HLP) on HyperEVM and beyond.`,
+  description: `The first ever liquid token, hwHLP, that accrues yield from the Hyperliquidity Provider vaults (HLP) on HyperEVM and beyond.`,
   icons: [
-    { rel: 'icon', type: 'image/x-icon', url: '/favicon.ico' },
+    { rel: 'icon', type: 'image/x-icon', url: '/favicon.png' },
     {
       rel: 'icon',
       type: 'image/png',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: `HWAVE Token Launch - Hyperwave`,
-    description: `The first ever liquid token (hwHLP) that accrues yield from the Hyperliquidity Provider vaults (HLP) on HyperEVM and beyond.`,
+    description: `The first ever liquid token, hwHLP, that accrues yield from the Hyperliquidity Provider vaults (HLP) on HyperEVM and beyond.`,
     siteName: 'Hyperwave',
     type: 'website',
   },
