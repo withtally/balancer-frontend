@@ -111,7 +111,7 @@ export function HwaveLandingPage({ launchTime }: HwaveLandingPageProps) {
             transition={{ duration: 0.8, delay: 1.2 }}
           >
             <Text color="gray.400" fontSize="sm">
-              Join the Hyperwave ecosystem and be part of the future of DeFi
+              Earn Hyperwave revenue and take your place in the House of Payments
             </Text>
             <Box
               bg="linear-gradient(90deg, transparent 0%, #21F1A6 50%, transparent 100%)"

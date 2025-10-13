@@ -41,7 +41,7 @@ export function CalendarCTA({ launchTime }: CalendarCTAProps) {
   return (
     <VStack align="center" spacing="md">
       <Text color="white" fontSize="lg" maxW="md" textAlign="center">
-        The LBP Swap will open at{' '}
+        The LBP will open on{' '}
         <Text as="span" color="#21F1A6" fontWeight="600">
           {formatLaunchTime(launchTime)}
         </Text>
