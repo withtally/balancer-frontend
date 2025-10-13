@@ -20,7 +20,7 @@ import { useUserSettings } from '../user/settings/UserSettingsProvider'
 import { useUserAccount } from './UserAccountProvider'
 import { useDisconnect } from 'wagmi'
 import NextLink from 'next/link'
-import { isBalancer, isBeets, PROJECT_CONFIG } from '@repo/lib/config/getProjectConfig'
+import { PROJECT_CONFIG } from '@repo/lib/config/getProjectConfig'
 import { shouldUseAnvilFork } from '@repo/lib/config/app.config'
 
 export function AcceptPoliciesModal() {
@@ -75,29 +75,17 @@ export function AcceptPoliciesModal() {
               onChange={e => setIsChecked(e.target.checked)}
               size="lg"
             >
-                <Box aria-label="Accept policies" color="font.primary" fontSize="md" mt="-3px">
-                  By connecting my wallet, I agree to Hyperwave Foundation&apos;s{' '}
-                  <Link as={NextLink} href="/terms-of-use">
-                    Terms of Use
-                  </Link>
-                  ,{' '}
-                  <Link as={NextLink} href="/risks">
-                    Risks
-                  </Link>
-                  ,{' '}
-                  <Link as={NextLink} href="/cookies-policy">
-                    Cookies Policy
-                  </Link>
-                  , use of{' '}
-                  <Link as={NextLink} href="/3rd-party-services">
-                    Third-party services
-                  </Link>{' '}
-                  and{' '}
-                  <Link as={NextLink} href="/privacy-policy">
-                    Privacy Policy
-                  </Link>
-                  .
-                </Box>
+              <Box aria-label="Accept policies" color="font.primary" fontSize="md" mt="-3px">
+                By connecting my wallet, I agree to Hyperwave Labs&apos;s{' '}
+                <Link as={NextLink} href="https://hyperwavefi.xyz/terms">
+                  Terms of Use
+                </Link>
+                and{' '}
+                <Link as={NextLink} href="https://hyperwavefi.xyz/privacy">
+                  Privacy Policy
+                </Link>
+                .
+              </Box>
             </Checkbox>
           </VStack>
         </ModalBody>
