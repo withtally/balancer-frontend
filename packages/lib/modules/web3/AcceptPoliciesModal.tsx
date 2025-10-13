@@ -79,7 +79,7 @@ export function AcceptPoliciesModal() {
                 By connecting my wallet, I agree to Hyperwave Labs&apos;s{' '}
                 <Link as={NextLink} href="https://hyperwavefi.xyz/terms">
                   Terms of Use
-                </Link>
+                </Link>{' '}
                 and{' '}
                 <Link as={NextLink} href="https://hyperwavefi.xyz/privacy">
                   Privacy Policy

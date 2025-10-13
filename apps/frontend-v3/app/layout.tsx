@@ -12,8 +12,8 @@ import { ThemeProvider as ColorThemeProvider } from 'next-themes'
 import { ThemeProvider } from '@bal/lib/services/chakra/ThemeProvider'
 
 export const metadata: Metadata = {
-  title: `HWAVE Token Launch - Hyperwave`,
-  description: `The first ever liquid token, hwHLP, that accrues yield from the Hyperliquidity Provider vaults (HLP) on HyperEVM and beyond.`,
+  title: `HWAVE Public Sale - Hyperwave`,
+  description: `HWAVE is the native utility token for the Hyperwave Ecosystem it is primarily used for staking and incentive alignment.`,
   icons: [
     { rel: 'icon', type: 'image/x-icon', url: '/favicon.png' },
     {
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: `HWAVE Token Launch - Hyperwave`,
-    description: `The first ever liquid token, hwHLP, that accrues yield from the Hyperliquidity Provider vaults (HLP) on HyperEVM and beyond.`,
+    title: `HWAVE Public Sale - Hyperwave`,
+    description: `HWAVE is the native utility token for the Hyperwave Ecosystem it is primarily used for staking and incentive alignment.`,
     siteName: 'Hyperwave',
     type: 'website',
   },
