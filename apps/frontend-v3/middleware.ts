@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { geolocation } from '@vercel/functions'
 
 // List of blocked countries
 const BLOCKED_COUNTRIES = [
@@ -12,8 +13,8 @@ const BLOCKED_COUNTRIES = [
 ]
 
 export function middleware(request: NextRequest) {
-  // Get the country from Vercel's IP geolocation
-  const country = request.geo?.country
+  // Get the country from Vercel's IP geolocation using the official helper
+  const { country } = geolocation(request)
 
   // If we can't determine the country, allow access (fail open)
   if (!country) {
