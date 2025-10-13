@@ -10,6 +10,7 @@ import { NavBarContainer } from '../lib/components/navs/NavBarContainer'
 import { DEFAULT_THEME_COLOR_MODE } from '@repo/lib/shared/services/chakra/themes/base/foundations'
 import { ThemeProvider as ColorThemeProvider } from 'next-themes'
 import { ThemeProvider } from '../lib/services/chakra/ThemeProvider'
+import { ThemeSettingsProvider } from '@repo/lib/shared/services/chakra/useThemeSettings'
 import { BalancerLogoType } from '../lib/components/imgs/BalancerLogoType'
 import { Footer } from '@repo/lib/shared/components/navs/Footer'
 
@@ -48,16 +49,18 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <NextTopLoader color="#7f6ae8" showSpinner={false} />
         <ColorThemeProvider defaultTheme={DEFAULT_THEME_COLOR_MODE}>
           <ThemeProvider>
-            <Providers>
-              <NavBarContainer />
-              {children}
-              <Footer
-                logoType={<BalancerLogoType />}
-                subTitle="Balancer is a battle-tested toolkit for true AMM experimentation and innovation."
-                title="AMMs made easy"
-              />
-              <SpeedInsights />
-            </Providers>
+            <ThemeSettingsProvider settings={{ hideDarkModeToggle: true }}>
+              <Providers>
+                <NavBarContainer />
+                {children}
+                <Footer
+                  logoType={<BalancerLogoType />}
+                  subTitle="Balancer is a battle-tested toolkit for true AMM experimentation and innovation."
+                  title="AMMs made easy"
+                />
+                <SpeedInsights />
+              </Providers>
+            </ThemeSettingsProvider>
           </ThemeProvider>
         </ColorThemeProvider>
       </body>

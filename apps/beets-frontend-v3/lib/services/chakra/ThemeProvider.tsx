@@ -10,7 +10,7 @@ import { useColorMode } from '@chakra-ui/react'
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const isMounted = useIsMounted()
 
-  // this fixes the 'light' theme which was set incorrectly but stored in localStorage awhile ago
+  // Force dark mode always
   function SetDarkTheme() {
     const { setTheme } = useTheme()
     const { setColorMode } = useColorMode()

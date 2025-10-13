@@ -10,6 +10,7 @@ import { Providers } from '@repo/lib/shared/components/site/providers'
 import { DEFAULT_THEME_COLOR_MODE } from '@repo/lib/shared/services/chakra/themes/base/foundations'
 import { ThemeProvider as ColorThemeProvider } from 'next-themes'
 import { ThemeProvider } from '@bal/lib/services/chakra/ThemeProvider'
+import { ThemeSettingsProvider } from '@repo/lib/shared/services/chakra/useThemeSettings'
 
 export const metadata: Metadata = {
   title: `HWAVE Public Sale - Hyperwave`,
@@ -49,11 +50,13 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <NextTopLoader color="#7f6ae8" showSpinner={false} />
         <ColorThemeProvider defaultTheme={DEFAULT_THEME_COLOR_MODE}>
           <ThemeProvider>
-            <Providers>
-              {children}
-              <SpeedInsights />
-              <Script async src="https://w.appzi.io/w.js?token=8TY8k" />
-            </Providers>
+            <ThemeSettingsProvider settings={{ hideDarkModeToggle: true }}>
+              <Providers>
+                {children}
+                <SpeedInsights />
+                <Script async src="https://w.appzi.io/w.js?token=8TY8k" />
+              </Providers>
+            </ThemeSettingsProvider>
           </ThemeProvider>
         </ColorThemeProvider>
       </body>
