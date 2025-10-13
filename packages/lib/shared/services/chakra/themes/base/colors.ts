@@ -66,7 +66,7 @@ export const colors = {
     '50': '#f5f4fe',
     '100': '#ecebfc',
     '200': '#dbdafa',
-    '300': '#b3aef5',
+    '300': '#21F1A6',
     '400': '#9f95f0',
     '500': '#7f6ae8',
     '600': '#6c4add',
@@ -87,6 +87,9 @@ export const colors = {
     '800': '#00674e',
     '900': '#005541',
     '950': '#003026',
+  },
+  accent: {
+    green: '#21F1A6',
   },
   // sand: 'hsla(43,23%,91%,1)',
   chartBorder: {
@@ -114,6 +117,7 @@ export const colors = {
 
     goldLight: 'linear-gradient(90deg, #BC874C 0%,rgb(193, 149, 17) 50%, #BC874C 100%)',
     goldDark: 'linear-gradient(90deg, #A18775 0%, #C4BC97 50%, #958471 100%)',
+    primaryGreen: 'linear-gradient(135deg, #21F1A6 0%, #1DD1A1 100%)',
   },
   aura: {
     purple: '#A855F7',

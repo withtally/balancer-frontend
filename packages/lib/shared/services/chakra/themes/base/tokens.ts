@@ -31,8 +31,8 @@ export function getTokens(colors: any, primaryTextColor: string) {
         // Button colors
         button: {
           background: {
-            primary: colors.gradient.dawnDark,
-            secondary: colors.gradient.sandLight,
+            primary: colors.gradient.primaryGreen,
+            secondary: '#21F1A6',
           },
           border: {
             disabled: 'gray.400',
@@ -121,8 +121,8 @@ export function getTokens(colors: any, primaryTextColor: string) {
         // Button colors
         button: {
           background: {
-            primary: colors.gradient.dawnDark,
-            secondary: colors.gradient.sandDark,
+            primary: colors.gradient.primaryGreen,
+            secondary: '#21F1A6',
             tertiary: `linear-gradient(180deg, ${tinycolor(colors.base.dark).lighten(8)} 0%, ${
               colors.base.dark
             } 100%)`,
@@ -138,12 +138,12 @@ export function getTokens(colors: any, primaryTextColor: string) {
         },
         // Font colors
         text: {
-          primary: '#E5D3BE',
+          primary: colors.gray['300'],
           secondary: colors.gray['400'],
           secondaryAlpha50: tinycolor(colors.gray['400']).setAlpha(0.15),
           primaryGradient: 'linear-gradient(45deg, #E6C6A0 0%, #E5D3BE 100%)',
           secondaryGradient: 'linear-gradient(45deg, #909BAD 0%, #728097 100%)',
-          special: 'linear-gradient(90deg, #B3AEF5 0%, #D7CBE7 25%, #E5C8C8 50%, #EAA879 100%)',
+          special: '#21F1A6',
           specialSecondary: 'linear-gradient(180deg, #EA9A43 0%, #F06147 100%)',
           gold: colors.gradient.goldDark,
           link: colors.purple['300'],

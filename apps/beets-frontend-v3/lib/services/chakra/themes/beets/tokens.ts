@@ -32,7 +32,7 @@ export function getBeetsTokens(colors: any, primaryTextColor: any) {
         button: {
           ...baseTokens.colors.light.button,
           background: {
-            primary: 'linear-gradient(90deg, #BCEC79 0%, #81C91C 100%)',
+            primary: 'linear-gradient(135deg, #21F1A6 0%, #1DD1A1 100%)',
             secondary: '#BCEC79',
           },
         },
@@ -42,7 +42,7 @@ export function getBeetsTokens(colors: any, primaryTextColor: any) {
           secondary: '#827474',
           link: '#408A13',
           linkHover: colors.gray['900'],
-          special: 'linear-gradient(90deg, #194D05 0%, #30940A 100%)',
+          special: '#21F1A6',
         },
         input: {
           ...baseTokens.colors.light.input,
@@ -72,7 +72,7 @@ export function getBeetsTokens(colors: any, primaryTextColor: any) {
         button: {
           ...baseTokens.colors.dark.button,
           background: {
-            primary: 'linear-gradient(90deg, #91E2C1 0%, #05D690 100%)',
+            primary: 'linear-gradient(135deg, #21F1A6 0%, #1DD1A1 100%)',
             secondary: '#05D690',
           },
         },
@@ -82,7 +82,7 @@ export function getBeetsTokens(colors: any, primaryTextColor: any) {
           secondary: '#DDDDDD',
           link: '#91e2c1',
           linkHover: '#91e2c1',
-          special: 'linear-gradient(90deg, #78EABC 0%, #18B575 100%)',
+          special: '#21F1A6',
           highlight: '#05D690',
         },
         input: {
