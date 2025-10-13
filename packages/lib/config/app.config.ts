@@ -21,6 +21,7 @@ export const hwaveConfig = {
   poolId: process.env.NEXT_PUBLIC_LBP_POOL_ID || '',
   chain: process.env.NEXT_PUBLIC_LBP_CHAIN || 'SEPOLIA',
   variant: process.env.NEXT_PUBLIC_LBP_VARIANT || 'v3',
+  launchTime: process.env.NEXT_PUBLIC_LBP_LAUNCH_TIME || '',
 }
 
 export const isDev = process.env.NEXT_PUBLIC_APP_ENV === 'dev'
