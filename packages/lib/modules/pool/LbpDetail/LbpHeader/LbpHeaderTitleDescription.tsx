@@ -1,10 +1,10 @@
-import { HStack, VStack, Heading, Text, Button, IconButton, Link, Stack } from '@chakra-ui/react'
+import { HStack, VStack, Heading, Text, IconButton, Link, Stack } from '@chakra-ui/react'
 import { GqlPoolLiquidityBootstrappingV3 } from '@repo/lib/shared/services/api/generated/graphql'
 import { TokenIcon } from '@repo/lib/modules/tokens/TokenIcon'
 import { IconType, SocialIcon } from '@repo/lib/shared/components/navs/SocialIcon'
-import { ArrowUpRight } from 'react-feather'
 import { NetworkIcon } from '@repo/lib/shared/components/icons/NetworkIcon'
 import { usePool } from '../../PoolProvider'
+import { LbpInfoModal } from '@repo/lib/modules/lbp/modal/LbpInfoModal'
 
 export function LbpHeaderTitleDescription() {
   const { pool } = usePool()
@@ -55,12 +55,7 @@ export function LbpHeaderTitleDescription() {
         {lbpPool.description}
       </Text>
       <HStack mt="auto">
-        <Button as={Link} href={lbpPool.website || ''} isExternal variant="tertiary">
-          <HStack gap="xxs">
-            <Text>View project</Text>
-            <ArrowUpRight size={12} />
-          </HStack>
-        </Button>
+        <LbpInfoModal buttonLabel="What's an LBP?" />
         <Text opacity="0.25" px={{ base: '0', sm: 'ms' }} variant="secondary">
           |
         </Text>
