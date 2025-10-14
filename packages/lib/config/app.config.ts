@@ -24,6 +24,12 @@ export const hwaveConfig = {
   launchTime: process.env.NEXT_PUBLIC_LBP_LAUNCH_TIME || '',
 }
 
+// GlueX Integration Configuration
+export const glueXConfig = {
+  integratorId: process.env.NEXT_PUBLIC_GLUEX_INTEGRATOR_ID || '',
+  apiKey: process.env.NEXT_PUBLIC_GLUEX_API_KEY || '',
+}
+
 export const isDev = process.env.NEXT_PUBLIC_APP_ENV === 'dev'
 export const isProd = process.env.NEXT_PUBLIC_APP_ENV === 'prod'
 export const isStaging = process.env.NEXT_PUBLIC_APP_ENV === 'staging'

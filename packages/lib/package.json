@@ -35,6 +35,8 @@
     "@dicebear/core": "9.2.4",
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.0",
+    "@gluex/sdk": "^1.0.19",
+    "@gluex/widget": "^1.0.36",
     "@layerzerolabs/scan-client": "^0.0.8",
     "@nikolovlazar/chakra-ui-prose": "^1.2.1",
     "@nktkas/hyperliquid": "0.23.1",
