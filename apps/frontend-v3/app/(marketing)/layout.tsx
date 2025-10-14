@@ -3,12 +3,12 @@ import { Metadata } from 'next'
 import { PropsWithChildren } from 'react'
 
 export const metadata: Metadata = {
-  title: `Balancer—AMMs made easy`,
-  description: `DeFi's most extensive AMM product suite. The Balancer protocol delivers fungible and yield-bearing liquidity across Ethereum and select EVM chains.`,
+  title: `HWAVE LBP - Hyperwave`,
+  description: `The native token of Hyperwave DAO — connecting users to Hyperwave's growth and revenue`,
   openGraph: {
-    title: `Balancer—AMMs made easy`,
-    description: `DeFi's most extensive AMM product suite. The Balancer protocol delivers fungible and yield-bearing liquidity across Ethereum and select EVM chains.`,
-    siteName: 'Balancer',
+    title: `HWAVE LBP - Hyperwave`,
+    description: `The native token of Hyperwave DAO — connecting users to Hyperwave's growth and revenue.`,
+    siteName: 'Hyperwave',
   },
 }
 
