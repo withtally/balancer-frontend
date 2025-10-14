@@ -79,9 +79,7 @@ export function HwaveLandingPage({ launchTime }: HwaveLandingPageProps) {
             maxW="2xl"
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            The native utility token for the Hyperwave Ecosystem
-            <br />
-            Used for staking and incentive alignment
+            The native token of Hyperwave DAO — connecting users to Hyperwave's growth and revenue.
           </MotionText>
 
           {/* Countdown Timer */}

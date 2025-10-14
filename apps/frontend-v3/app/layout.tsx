@@ -13,8 +13,8 @@ import { ThemeProvider } from '@bal/lib/services/chakra/ThemeProvider'
 import { ThemeSettingsProvider } from '@repo/lib/shared/services/chakra/useThemeSettings'
 
 export const metadata: Metadata = {
-  title: `HWAVE Public Sale - Hyperwave`,
-  description: `HWAVE is the native utility token for the Hyperwave Ecosystem it is primarily used for staking and incentive alignment.`,
+  title: `HWAVE LBP - Hyperwave`,
+  description: `The native token of Hyperwave DAO — connecting users to Hyperwave's growth and revenue.`,
   icons: [
     { rel: 'icon', type: 'image/x-icon', url: '/favicon.png' },
     {
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: `HWAVE Public Sale - Hyperwave`,
-    description: `HWAVE is the native utility token for the Hyperwave Ecosystem it is primarily used for staking and incentive alignment.`,
+    title: `HWAVE LBP - Hyperwave`,
+    description: `The native token of Hyperwave DAO — connecting users to Hyperwave's growth and revenue.`,
     siteName: 'Hyperwave',
     type: 'website',
   },
