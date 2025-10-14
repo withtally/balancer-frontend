@@ -1,6 +1,5 @@
-import { HStack, Icon, Text, VStack, Box, Badge } from '@chakra-ui/react'
+import { HStack, Icon, Text, VStack } from '@chakra-ui/react'
 import { usePool } from '@repo/lib/modules/pool/PoolProvider'
-import { Picture } from '@repo/lib/shared/components/other/Picture'
 import { useDateCountdown } from '@repo/lib/shared/hooks/date.hooks'
 import { GqlPoolLiquidityBootstrappingV3 } from '@repo/lib/shared/services/api/generated/graphql'
 import { format, isAfter, isBefore, secondsToMilliseconds } from 'date-fns'
@@ -11,7 +10,7 @@ import { now } from '@repo/lib/shared/utils/time'
 function TimeElement({ title, value }: { title: string; value: string }) {
   return (
     <VStack>
-      <Text color="gray.400" fontSize="10px" fontWeight="500" lineHeight="12px" textAlign="center">
+      <Text color="white" fontSize="10px" fontWeight="500" lineHeight="12px" textAlign="center">
         {title}
       </Text>
       <Text
@@ -34,45 +33,15 @@ function Tile({ children }: PropsWithChildren) {
   return (
     <VStack
       alignItems="center"
+      backgroundColor="#0D1616"
+      border="1px solid"
+      borderColor="#21F1A6"
       justifyContent="center"
       minH="100%"
-      position="relative"
       px="sm"
       rounded="lg"
-      shadow="2xl"
       spacing="none"
     >
-      <Box
-        h="full"
-        inset={0}
-        overflow="hidden"
-        position="absolute"
-        rounded="lg"
-        w="full"
-        zIndex={-1}
-      >
-        <Picture
-          altText="Marble texture"
-          defaultImgType="jpg"
-          directory="/images/textures/"
-          height="100%"
-          imgAvif
-          imgAvifDark
-          imgJpg
-          imgJpgDark
-          imgName="marble-square"
-          width="100%"
-        />
-      </Box>
-      <Box
-        bg="#0D1616"
-        inset={0}
-        opacity={0.95}
-        overflow="hidden"
-        position="absolute"
-        rounded="lg"
-        zIndex={-1}
-      />
       {children}
     </VStack>
   )
@@ -127,12 +96,22 @@ export function LbpHeaderTimeInfo() {
         </HStack>
       ) : (
         <HStack spacing="4" w="full">
-          <Badge flex="1" h="full" justifyContent="start" px="3" variant="lbpCountdown">
-            <HStack alignItems="center" spacing="2">
-              <Icon as={Clock} />
-              <Text fontWeight="semibold">{`LBP is live! Ends ${endTimeFormatted}`}</Text>
-            </HStack>
-          </Badge>
+          <HStack
+            alignItems="center"
+            backgroundColor="#21F1A6"
+            borderRadius="sm"
+            color="#051212"
+            flex="1"
+            h="full"
+            justifyContent="start"
+            px="3"
+          >
+            <Icon as={Clock} color="#051212" />
+            <Text
+              color="#051212"
+              fontWeight="semibold"
+            >{`LBP is live! Ends ${endTimeFormatted}`}</Text>
+          </HStack>
 
           <Countdown until={new Date(secondsToMilliseconds(lbpPool.endTime))} />
         </HStack>
@@ -150,11 +129,13 @@ function Countdown({ until }: { until: Date }) {
         <TimeElement title="D" value={String(info.daysDiff)} />
       </Tile>
       <Tile>
-        <HStack spacing="xs">
-          <TimeElement title="H" value={String(info.hoursDiff).padStart(2, '0')} />
-          <TimeElement title="M" value={String(info.minutesDiff).padStart(2, '0')} />
-          <TimeElement title="S" value={String(info.secondsDiff).padStart(2, '0')} />
-        </HStack>
+        <TimeElement title="H" value={String(info.hoursDiff).padStart(2, '0')} />
+      </Tile>
+      <Tile>
+        <TimeElement title="M" value={String(info.minutesDiff).padStart(2, '0')} />
+      </Tile>
+      <Tile>
+        <TimeElement title="S" value={String(info.secondsDiff).padStart(2, '0')} />
       </Tile>
     </HStack>
   )

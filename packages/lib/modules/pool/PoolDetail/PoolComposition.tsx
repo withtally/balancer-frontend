@@ -49,7 +49,7 @@ function CardContent({ totalLiquidity, poolTokens, chain, pool }: CardContentPro
     <VStack spacing="md" width="full">
       <HStack justifyContent="space-between" width="full">
         <VStack alignItems="flex-start">
-          <Heading fontWeight="bold" size="h5">
+          <Heading color="font.highlight" fontWeight="bold" size="h5">
             Total liquidity
           </Heading>
         </VStack>
@@ -156,7 +156,7 @@ export function PoolComposition() {
   }, [pool.id])
 
   return (
-    <Card ref={cardRef}>
+    <Card ref={cardRef} variant="lbp">
       <Stack
         direction={{ base: 'column', md: 'row' }}
         justifyContent="stretch"
@@ -166,7 +166,7 @@ export function PoolComposition() {
       >
         <VStack align="flex-start" spacing="md" w="full">
           <HStack justifyContent="space-between" w="full">
-            <Heading fontWeight="bold" size="h4">
+            <Heading color="font.highlight" fontWeight="bold" size="h4">
               Pool composition
             </Heading>
             <PoolTypeTag pool={pool} />

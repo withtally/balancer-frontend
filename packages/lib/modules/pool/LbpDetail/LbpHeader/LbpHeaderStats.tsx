@@ -1,7 +1,7 @@
 import { Flex, Box } from '@chakra-ui/react'
 import { usePoolStats } from '@repo/lib/modules/lbp/pool/usePoolStats'
 import { AnimatedNumber } from '@repo/lib/shared/components/other/AnimatedNumber'
-import Stat from '@repo/lib/shared/components/other/Stat'
+import { LbpStat } from './LbpStat'
 import { safeToNumber } from '@repo/lib/shared/utils/numbers'
 import { usePool } from '../../PoolProvider'
 import { GqlPoolLiquidityBootstrappingV3 } from '@repo/lib/shared/services/api/generated/graphql'
@@ -11,8 +11,6 @@ type StatItem = {
   label: string
   value?: string | number | undefined | null
 }
-
-const IMAGE_TRANSFORM_ARRAY = ['rotate(180deg) scale(2)', 'rotate(180deg)', 'scale(1)']
 
 export function LbpHeaderStats() {
   const { pool } = usePool()
@@ -38,11 +36,7 @@ export function LbpHeaderStats() {
     >
       {statItems.map((stat, index) => (
         <Box key={index}>
-          <Stat
-            imageTransform={IMAGE_TRANSFORM_ARRAY[index % IMAGE_TRANSFORM_ARRAY.length]}
-            label={stat.label}
-            value={<AnimatedNumber value={safeToNumber(stat.value)} />}
-          />
+          <LbpStat label={stat.label} value={<AnimatedNumber value={safeToNumber(stat.value)} />} />
         </Box>
       ))}
     </Flex>

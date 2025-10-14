@@ -50,9 +50,9 @@ export function RisksList({ textVariant = 'secondary' }: RisksListProps) {
 
 export function PoolRisks({ ...props }: CardProps) {
   return (
-    <Card {...props}>
+    <Card variant="lbp" {...props}>
       <VStack alignItems="flex-start" spacing="4" width="full">
-        <Heading fontSize="1.25rem" variant="h4">
+        <Heading color="font.highlight" fontSize="1.25rem" variant="h4">
           Pool risks
         </Heading>
         <Divider />

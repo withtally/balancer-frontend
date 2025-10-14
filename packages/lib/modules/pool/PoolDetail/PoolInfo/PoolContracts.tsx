@@ -195,9 +195,9 @@ export function PoolContracts({ ...props }: CardProps) {
   }, [pool])
 
   return (
-    <Card {...props}>
+    <Card variant="lbp" {...props}>
       <VStack alignItems="flex-start" spacing="md" width="full">
-        <Heading fontSize="xl" variant="h4">
+        <Heading color="font.highlight" fontSize="xl" variant="h4">
           Pool contracts
         </Heading>
         <Divider />

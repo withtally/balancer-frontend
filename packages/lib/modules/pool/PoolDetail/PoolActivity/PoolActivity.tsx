@@ -109,7 +109,7 @@ function Content() {
   }
 
   return (
-    <Card role="group">
+    <Card role="group" variant="lbp">
       <Stack
         alignItems="start"
         direction={{ base: 'column', md: 'row' }}
@@ -123,7 +123,7 @@ function Content() {
             transform={!isChartView ? 'translateY(4px)' : '0'}
             transition="transform 0.2s var(--ease-out-cubic)"
           >
-            <Heading fontWeight="bold" size="h5">
+            <Heading color="font.highlight" fontWeight="bold" size="h5">
               {title}
             </Heading>
           </Box>

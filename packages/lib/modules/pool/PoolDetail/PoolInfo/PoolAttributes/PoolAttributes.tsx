@@ -8,9 +8,9 @@ export function PoolAttributes() {
   const formattedAttributes = useFormattedPoolAttributes()
 
   return (
-    <Card>
+    <Card variant="lbp">
       <VStack alignItems="flex-start" spacing={{ base: 'sm', md: 'md' }} width="full">
-        <Heading fontSize="1.25rem" variant="h4">
+        <Heading color="font.highlight" fontSize="1.25rem" variant="h4">
           Pool attributes
         </Heading>
         <Divider />
