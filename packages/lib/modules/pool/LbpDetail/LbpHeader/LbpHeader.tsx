@@ -9,13 +9,8 @@ import { LbpHeaderStats } from './LbpHeaderStats'
 
 export function LbpHeader() {
   return (
-    <Box borderBottom="1px solid" borderColor="border.base">
-      <Noise
-        backgroundColor="rgba(0, 0, 0, 0.8)"
-        overflow="hidden"
-        position="relative"
-        shadow="innerBase"
-      >
+    <Box borderBottom="1px solid" borderColor="border.lbp">
+      <Noise backgroundColor="#051212" overflow="hidden" position="relative" shadow="innerBase">
         <DefaultPageContainer
           pb={['xl', 'xl', '10']}
           pr={{ base: '0 !important', md: 'md !important' }}

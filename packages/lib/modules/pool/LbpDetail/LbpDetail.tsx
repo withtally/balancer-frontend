@@ -16,6 +16,7 @@ import { MyTransactions } from './MyTransactions'
 import { GetFundsWarning } from './GetFundsWarning'
 import { useUserAccount } from '../../web3/UserAccountProvider'
 import { Top10Trades } from './Top10Trades'
+import { LbpBackground } from '../../lbp/LbpBackground'
 
 export function LbpDetail() {
   const { userPoolEvents, isLoadingUserPoolEvents, hasPoolEvents } = useUserPoolEvents()
@@ -28,7 +29,7 @@ export function LbpDetail() {
   const fundsAvailable = Number(lbpPool.userBalance?.totalBalance) > 0
 
   return (
-    <>
+    <LbpBackground>
       <LbpHeader />
       <DefaultPageContainer noVerticalPadding pb="xl" pt={['lg', '40px']}>
         <VStack spacing="2xl" w="full">
@@ -61,6 +62,6 @@ export function LbpDetail() {
           <PoolInfoLayout />
         </VStack>
       </DefaultPageContainer>
-    </>
+    </LbpBackground>
   )
 }

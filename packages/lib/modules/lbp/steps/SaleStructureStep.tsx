@@ -103,7 +103,7 @@ export function SaleStructureStep() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
       <VStack align="start" spacing="lg" w="full">
-        <Heading color="font.maxContrast" size="md">
+        <Heading color="#21F1A6" size="md">
           Launch token details
         </Heading>
 
@@ -125,7 +125,7 @@ export function SaleStructureStep() {
           <>
             <Divider />
 
-            <Heading color="font.maxContrast" size="md">
+            <Heading color="#21F1A6" size="md">
               Sale period
             </Heading>
             <VStack align="start" gap="lg" w="full">
@@ -149,7 +149,7 @@ export function SaleStructureStep() {
 
             <Divider />
 
-            <Heading color="font.maxContrast" size="md">
+            <Heading color="#21F1A6" size="md">
               LBP mechanism
             </Heading>
             <CollateralTokenAddressInput control={control} selectedChain={selectedChain} />

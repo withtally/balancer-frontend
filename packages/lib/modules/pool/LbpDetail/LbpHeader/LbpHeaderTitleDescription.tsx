@@ -41,20 +41,17 @@ export function LbpHeaderTitleDescription() {
         />
         <VStack align="start" spacing="sm">
           <HStack spacing="md">
-            <Heading
-              fontSize="4xl"
-              lineHeight="36px"
-              color="white"
-              fontWeight="bold"
-            >{`${projectToken.symbol} token launch`} 🚀</Heading>
+            <Heading color="white" fontSize="4xl" fontWeight="bold" lineHeight="36px">
+              {`${projectToken.symbol} token launch`} 🚀
+            </Heading>
             <NetworkIcon chain={pool.chain} size={8} />
           </HStack>
-          <Text fontSize="md" color="gray.300">
+          <Text color="gray.400" fontSize="md">
             {lbpPool.lbpName}
           </Text>
         </VStack>
       </HStack>
-      <Text fontSize="md" lineHeight="24px" color="gray.300">
+      <Text color="gray.400" fontSize="md" lineHeight="24px">
         {lbpPool.description}
       </Text>
       <HStack mt="auto">

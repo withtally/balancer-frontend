@@ -91,6 +91,23 @@ export const colors = {
   accent: {
     green: '#21F1A6',
   },
+  lbp: {
+    dark: {
+      bg: '#051212', // Deep dark background
+      bgAlt: '#0A1414', // Slightly lighter dark
+      bgCard: '#0D1616', // Card background
+      border: 'rgba(33, 241, 166, 0.2)', // Teal border with increased opacity
+    },
+    teal: {
+      primary: '#21F1A6', // Bright teal accent
+      secondary: '#1DD1A1', // Slightly darker teal
+      light: '#4DF5C7', // Lighter teal for hover states
+    },
+    purple: {
+      primary: '#6300B9', // Deep purple
+      secondary: '#7B1FA2', // Medium purple
+    },
+  },
   // sand: 'hsla(43,23%,91%,1)',
   chartBorder: {
     light: '#edeae3',
@@ -118,6 +135,14 @@ export const colors = {
     goldLight: 'linear-gradient(90deg, #BC874C 0%,rgb(193, 149, 17) 50%, #BC874C 100%)',
     goldDark: 'linear-gradient(90deg, #A18775 0%, #C4BC97 50%, #958471 100%)',
     primaryGreen: 'linear-gradient(135deg, #21F1A6 0%, #1DD1A1 100%)',
+    lbpPurple: 'linear-gradient(135deg, #6300B9 0%, #7B1FA2 100%)',
+    lbpTeal: 'linear-gradient(135deg, #21F1A6 0%, #1DD1A1 100%)',
+    lbpTealPrimary: 'linear-gradient(135deg, #21F1A6 0%, #4DF5C7 100%)',
+    lbpTealGlow: 'linear-gradient(135deg, #21F1A6 0%, #1DD1A1 50%, #4DF5C7 100%)',
+    lbpRadialTeal:
+      'radial-gradient(circle at 20% 20%, rgba(33, 241, 166, 0.15) 0%, transparent 60%)',
+    lbpRadialPurple:
+      'radial-gradient(circle at 80% 80%, rgba(99, 0, 185, 0.08) 0%, transparent 60%)',
   },
   aura: {
     purple: '#A855F7',

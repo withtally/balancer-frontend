@@ -53,7 +53,7 @@ export function HeaderBanner() {
         >
           <VStack alignItems="start" spacing="ms">
             <Box maxW="290px">
-              <Heading as="h1" size="lg" sx={{ textWrap: 'nowrap' }} variant="special">
+              <Heading as="h1" color="#21F1A6" size="lg" sx={{ textWrap: 'nowrap' }}>
                 Create an LBP token sale
               </Heading>
             </Box>

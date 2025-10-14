@@ -59,7 +59,7 @@ export function LbpFormAction({ disabled }: { disabled?: boolean }) {
           }
         }}
         size="lg"
-        variant="primary"
+        variant="lbpPrimary"
         w="full"
       >
         {isLastStep ? 'Create LBP' : 'Next'}

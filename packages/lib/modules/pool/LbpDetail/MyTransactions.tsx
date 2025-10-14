@@ -64,13 +64,12 @@ export function MyTransactions({
   }
 
   return (
-    <Card maxH="400px" ref={myLbpTransactionsSectionRef}>
+    <Card maxH="400px" ref={myLbpTransactionsSectionRef} variant="lbp">
       {isLoading && <Skeleton h="full" w="full" />}
       {!isLoading && (
         <VStack alignItems="flex-start" h="full" spacing="md" w="full">
           <Heading
-            backgroundClip="text"
-            bg="font.special"
+            color="font.highlight"
             fontWeight="bold"
             lineHeight="34px" // to align with 'My liquidity'
             size="h5"

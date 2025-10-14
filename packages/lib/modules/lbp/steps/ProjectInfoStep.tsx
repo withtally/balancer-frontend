@@ -45,7 +45,7 @@ export function ProjectInfoStep() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
       <VStack align="start" spacing="lg" w="full">
-        <Heading color="font.maxContrast" size="md">
+        <Heading color="#21F1A6" size="md">
           Project info
         </Heading>
 
@@ -55,7 +55,7 @@ export function ProjectInfoStep() {
         <TokenIconInput />
         <ProjectOwnerInput />
         <Divider />
-        <Heading color="font.maxContrast" size="md">
+        <Heading color="#21F1A6" size="md">
           Social accounts
         </Heading>
         <ProjectXHandle />

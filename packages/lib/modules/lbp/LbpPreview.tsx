@@ -49,7 +49,7 @@ export function LbpPreview() {
           {!isLastStep && (
             <>
               <Flex alignItems="center" pt="xs" w="full">
-                <Heading color="font.maxContrast" size="md">
+                <Heading color="#21F1A6" size="md">
                   LBP preview
                 </Heading>
                 <Spacer />

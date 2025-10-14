@@ -39,11 +39,11 @@ export function MyPurchases({
   }, [])
 
   return (
-    <Card h={['fit-content', height]}>
+    <Card h={['fit-content', height]} variant="lbp">
       {isLoading && <Skeleton h="full" w="full" />}
       {!isLoading && (
         <VStack align="start" h="full" spacing="md" width="full">
-          <Heading backgroundClip="text" bg="font.special" fontWeight="bold" size="h5">
+          <Heading color="font.highlight" fontWeight="bold" size="h5">
             My purchases
           </Heading>
           <Divider />

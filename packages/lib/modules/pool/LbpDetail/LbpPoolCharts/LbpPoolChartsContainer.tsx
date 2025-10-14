@@ -27,7 +27,7 @@ function PoolChartsContent() {
   const { hourlyData, hasHourlyData, isLoading } = useLbpPoolCharts()
 
   return (
-    <Card h="full">
+    <Card h="full" variant="lbp">
       <HStack align="start" justifyContent="space-between" w="full">
         <ButtonGroup
           currentOption={activeTab}

@@ -1,4 +1,4 @@
-import { HStack, Icon, Text, VStack, Box } from '@chakra-ui/react'
+import { HStack, Icon, Text, VStack, Box, Badge } from '@chakra-ui/react'
 import { usePool } from '@repo/lib/modules/pool/PoolProvider'
 import { Picture } from '@repo/lib/shared/components/other/Picture'
 import { useDateCountdown } from '@repo/lib/shared/hooks/date.hooks'
@@ -11,13 +11,7 @@ import { now } from '@repo/lib/shared/utils/time'
 function TimeElement({ title, value }: { title: string; value: string }) {
   return (
     <VStack>
-      <Text
-        color="gray.400"
-        fontSize="10px"
-        fontWeight="500"
-        lineHeight="12px"
-        textAlign="center"
-      >
+      <Text color="gray.400" fontSize="10px" fontWeight="500" lineHeight="12px" textAlign="center">
         {title}
       </Text>
       <Text
@@ -71,9 +65,9 @@ function Tile({ children }: PropsWithChildren) {
         />
       </Box>
       <Box
-        bg="rgba(0, 0, 0, 0.6)"
+        bg="#0D1616"
         inset={0}
-        opacity={0.8}
+        opacity={0.95}
         overflow="hidden"
         position="absolute"
         rounded="lg"
@@ -133,19 +127,12 @@ export function LbpHeaderTimeInfo() {
         </HStack>
       ) : (
         <HStack spacing="4" w="full">
-          <HStack
-            alignItems="center"
-            bg="green.500"
-            borderRadius="sm"
-            color="white"
-            flex="1"
-            h="full"
-            justifyContent="start"
-            px="2"
-          >
-            <Icon as={Clock} />
-            <Text color="white" fontWeight="medium">{`LBP is live! Ends ${endTimeFormatted}`}</Text>
-          </HStack>
+          <Badge flex="1" h="full" justifyContent="start" px="3" variant="lbpCountdown">
+            <HStack alignItems="center" spacing="2">
+              <Icon as={Clock} />
+              <Text fontWeight="semibold">{`LBP is live! Ends ${endTimeFormatted}`}</Text>
+            </HStack>
+          </Badge>
 
           <Countdown until={new Date(secondsToMilliseconds(lbpPool.endTime))} />
         </HStack>

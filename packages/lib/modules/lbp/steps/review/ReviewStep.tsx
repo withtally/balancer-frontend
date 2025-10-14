@@ -125,7 +125,9 @@ export function ReviewStep() {
 
       <Card>
         <CardHeader>
-          <Heading size="md">Seed liquidity</Heading>
+          <Heading color="#21F1A6" size="md">
+            Seed liquidity
+          </Heading>
         </CardHeader>
         <CardBody>
           <VStack gap="md" w="full">

@@ -575,14 +575,23 @@ export function getComponents(tokens: any, primaryTextColor: string) {
             background: '#E67A66',
             shadow: 'lg',
           },
-          _active: {
-            background: '#D96B57',
-            shadow: 'sm',
+        },
+        lbpPrimary: {
+          background: 'background.button.lbpPrimary',
+          color: 'font.dark',
+          boxShadow: '0 3px 20px hsla(160, 85%, 60%, 0.4)',
+          _hover: {
+            background: 'linear-gradient(135deg, #4DF5C7 0%, #21F1A6 100%)',
+            boxShadow: '0 3px 20px hsla(160, 85%, 50%, 0.5)',
           },
-          _disabled: {
-            background: '#F48975',
-            opacity: 0.6,
-            shadow: 'none',
+        },
+        lbpSecondary: {
+          background: 'background.button.lbpSecondary',
+          color: 'font.dark',
+          boxShadow: '0 3px 20px hsla(160, 85%, 60%, 0.3)',
+          _hover: {
+            background: '#4DF5C7',
+            boxShadow: '0 3px 20px hsla(160, 85%, 50%, 0.4)',
           },
         },
         solid: {
@@ -892,6 +901,14 @@ export function getComponents(tokens: any, primaryTextColor: string) {
             background: 'background.level4',
           },
         },
+        lbp: {
+          container: {
+            background: 'background.lbpCard',
+            borderColor: 'border.lbp',
+            borderWidth: '1px',
+            shadow: 'xl',
+          },
+        },
         gradient: {
           container: {
             width: 'full',
@@ -1196,6 +1213,17 @@ export function getComponents(tokens: any, primaryTextColor: string) {
           py: 1,
           px: 2,
           textTransform: 'capitalize',
+        },
+        lbpCountdown: {
+          background: 'linear-gradient(135deg, #21F1A6 0%, #1DD1A1 100%)',
+          color: '#051212',
+          shadow: '0 3px 20px hsla(160, 85%, 60%, 0.4)',
+          py: 2,
+          px: 4,
+          borderRadius: 'lg',
+          fontWeight: 'bold',
+          fontSize: 'sm',
+          textTransform: 'none',
         },
       },
     },

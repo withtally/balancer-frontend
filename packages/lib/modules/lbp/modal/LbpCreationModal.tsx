@@ -166,12 +166,12 @@ export function LbpCreationModal({
                 marginTop="4"
                 onClick={() => window.open(path, '_blank')}
                 size="lg"
-                variant="secondary"
+                variant="lbpSecondary"
                 w="full"
                 width="full"
               >
                 <HStack justifyContent="center" spacing="sm" width="100%">
-                  <Text color="font.primaryGradient" fontWeight="bold">
+                  <Text color="font.dark" fontWeight="bold">
                     View LBP page
                   </Text>
                 </HStack>
@@ -182,12 +182,12 @@ export function LbpCreationModal({
                 marginTop="2"
                 onClick={handleReset}
                 size="lg"
-                variant="primary"
+                variant="lbpPrimary"
                 w="full"
                 width="full"
               >
                 <HStack justifyContent="center" spacing="sm" width="100%">
-                  <Text color="font.primaryGradient" fontWeight="bold">
+                  <Text color="font.dark" fontWeight="bold">
                     Create another LBP
                   </Text>
                 </HStack>

@@ -108,6 +108,9 @@ export function getTokens(colors: any, primaryTextColor: string) {
           specialSecondary: colors.gradient.sunsetDark,
           highlight: colors.green['400'],
           gold: colors.gradient.goldDark,
+          lbp: colors.lbp.dark.bg,
+          lbpCard: colors.lbp.dark.bgCard,
+          lbpRadial: `${colors.lbp.dark.bg} ${colors.gradient.lbpRadialTeal}, ${colors.gradient.lbpRadialPurple}`,
         },
         // Border colors
         border: {
@@ -117,6 +120,7 @@ export function getTokens(colors: any, primaryTextColor: string) {
           zen: 'rgba(76, 85, 97, 0.50)',
           subduedZen: 'rgba(229, 211, 190, 0.05)',
           special: colors.gradient.special,
+          lbp: colors.lbp.dark.border,
         },
         // Button colors
         button: {
@@ -126,6 +130,8 @@ export function getTokens(colors: any, primaryTextColor: string) {
             tertiary: `linear-gradient(180deg, ${tinycolor(colors.base.dark).lighten(8)} 0%, ${
               colors.base.dark
             } 100%)`,
+            lbpPrimary: colors.gradient.lbpTealPrimary,
+            lbpSecondary: colors.lbp.teal.primary,
           },
           border: {
             tertiary: tinycolor(colors.base.dark).lighten(15),

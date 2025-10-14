@@ -18,10 +18,10 @@ export function Top10Trades({
   const trades = pool.topTrades || []
 
   return (
-    <Card h="full">
+    <Card h="full" variant="lbp">
       <VStack h="full" spacing="5" w="full">
         <HStack w="full">
-          <Text fontSize="lg" fontWeight="bold">
+          <Text color="font.highlight" fontSize="lg" fontWeight="bold">
             Biggest transactions during the sale
           </Text>
         </HStack>
