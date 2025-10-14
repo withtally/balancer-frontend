@@ -35,6 +35,14 @@ export const metadata: Metadata = {
     description: `The native token of Hyperwave DAO — connecting users to Hyperwave's growth and revenue.`,
     siteName: 'Hyperwave',
     type: 'website',
+    images: [
+      {
+        url: '/images/hyperwave/Hyperwave_logo_vertical.png',
+        width: 1200,
+        height: 630,
+        alt: 'Hyperwave Logo',
+      },
+    ],
   },
 }
 
