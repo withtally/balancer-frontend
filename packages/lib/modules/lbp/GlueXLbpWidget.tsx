@@ -27,8 +27,43 @@ export function GlueXLbpWidget({ pool, launchToken, hasDisabledInputs }: GlueXLb
       },
       // Disable token selection for the destination token
       tokens: {
-        // Allow all tokens for the "from" side, but lock the "to" token
-        allow: undefined, // Let users select any token to swap from
+        featured: [
+          {
+            address: '0x5555555555555555555555555555555555555555' as `0x${string}`,
+            symbol: 'WHYPE',
+            decimals: 18,
+            chainId: 999,
+            name: 'Wrapped HYPE',
+            logoURI:
+              'https://assets.coingecko.com/coins/images/54469/standard/_UP3jBsi_400x400.jpg?1739905920',
+          },
+          {
+            address: '0x4d2d5b537d5a4e9bbe1bcaf08baa56449caf89a6​' as `0x${string}`,
+            symbol: 'hwHYPE',
+            decimals: 18,
+            chainId: 999,
+            name: 'Hyperwave HYPE',
+            logoURI: 'https://assets.coingecko.com/coins/images/2518/thumb/weth.png',
+          },
+          {
+            address: '0x9fd7466f987fd4c45a5bbde22ed8aba5bc8d72d1​' as `0x${string}`,
+            symbol: 'hwHLP',
+            decimals: 18,
+            chainId: 999,
+            name: 'Hyperwave HLP',
+            logoURI: 'https://assets.coingecko.com/coins/images/2518/thumb/weth.png',
+          },
+          {
+            address: '0xb88339CB7199b77E23DB6E890353E22632Ba630f' as `0x${string}`,
+            symbol: 'USDC',
+            decimals: 6,
+            chainId: 999,
+            name: 'USD Coin',
+            logoURI: 'https://assets.coingecko.com/coins/images/6319/thumb/USD_Coin_icon.png',
+          },
+        ],
+        // Allow all tokens
+        allow: undefined,
       },
       wallet: {
         usePartialWalletManagement: true,
@@ -54,7 +89,7 @@ export function GlueXLbpWidget({ pool, launchToken, hasDisabledInputs }: GlueXLb
       variant: 'compact' as const,
       subvariant: 'router' as const,
       appearance: 'dark' as const,
-      hidden: ['poweredBy' as const, 'language' as const],
+      hidden: ['poweredBy' as const, 'language' as const, 'tokenCategories' as const],
     }
   }, [pool, launchToken, hasDisabledInputs])
 
