@@ -1,4 +1,4 @@
-import { Stack, VStack, Grid, GridItem } from '@chakra-ui/react'
+import { Stack, VStack, Grid, GridItem, Image, Box } from '@chakra-ui/react'
 import { DefaultPageContainer } from '@repo/lib/shared/components/containers/DefaultPageContainer'
 import { PoolActivity } from '../PoolDetail/PoolActivity/PoolActivity'
 import { PoolComposition } from '../PoolDetail/PoolComposition'
@@ -60,6 +60,16 @@ export function LbpDetail() {
           <PoolComposition />
 
           <PoolInfoLayout />
+
+          {/* Powered by Balancer Logo */}
+          <Box display="flex" justifyContent="center" pb="lg" pt="xl">
+            <Image
+              alt="Powered by Balancer"
+              height="24px"
+              src="/images/logos/powered-by-balancer-horizontal-white.png"
+              width="auto"
+            />
+          </Box>
         </VStack>
       </DefaultPageContainer>
     </LbpBackground>
