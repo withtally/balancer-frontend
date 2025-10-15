@@ -7,6 +7,9 @@ import { glueXConfig } from '@repo/lib/config/app.config'
 import { getChainId } from '@repo/lib/config/app.config'
 import { GlueXWidget } from '@gluex/widget'
 import { colors } from '@repo/lib/shared/services/chakra/themes/base/colors'
+import { useWagmiConfig } from '@repo/lib/modules/web3/WagmiConfigProvider'
+import { useUserAccount } from '@repo/lib/modules/web3/UserAccountProvider'
+import { useConnectModal } from '@rainbow-me/rainbowkit'
 
 interface GlueXLbpWidgetProps {
   pool: GqlPoolLiquidityBootstrappingV3
@@ -15,6 +18,10 @@ interface GlueXLbpWidgetProps {
 }
 
 export function GlueXLbpWidget({ pool, launchToken, hasDisabledInputs }: GlueXLbpWidgetProps) {
+  const { wagmiConfig } = useWagmiConfig()
+  const { openConnectModal } = useConnectModal()
+
+  const { isConnected } = useUserAccount()
   // Widget configuration
   const widgetConfig = useMemo(() => {
     return {
@@ -75,9 +82,6 @@ export function GlueXLbpWidget({ pool, launchToken, hasDisabledInputs }: GlueXLb
           ],
         },
       },
-      wallet: {
-        usePartialWalletManagement: true,
-      },
       theme: {
         palette: {
           primary: {
@@ -100,8 +104,19 @@ export function GlueXLbpWidget({ pool, launchToken, hasDisabledInputs }: GlueXLb
       subvariant: 'router' as const,
       appearance: 'dark' as const,
       hidden: ['poweredBy' as const, 'language' as const, 'tokenCategories' as const],
+      // Explicitly configure to use RainbowKit wallet management
+      wallet: {
+        usePartialWalletManagement: false,
+        onConnect: () => {
+          if (!isConnected) {
+            openConnectModal?.()
+          }
+        },
+      },
+      // Pass the wagmi config to ensure proper integration
+      wagmiConfig,
     }
-  }, [pool, launchToken, hasDisabledInputs])
+  }, [pool, launchToken, hasDisabledInputs, wagmiConfig])
 
   if (!widgetConfig) {
     return (
@@ -136,7 +151,9 @@ export function GlueXLbpWidget({ pool, launchToken, hasDisabledInputs }: GlueXLb
         justifyContent: 'center',
       }}
     >
+      {/* <WagmiProvider config={wagmiConfig} reconnectOnMount={false}> */}
       <GlueXWidget config={widgetConfig} />
+      {/* </WagmiProvider> */}
     </div>
   )
 }
