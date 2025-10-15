@@ -176,7 +176,7 @@ export function PoolWeightChart({
   return (
     <VStack justifyContent="center">
       <Box
-        _groupHover={{ transform: 'translateY(0) scale(1.05)' }}
+        _groupHover={{ transform: 'translateY(0) scale(1.02)' }}
         height={`${chartSizeValues.boxHeight}`}
         position="relative"
         transition="all 0.2s var(--ease-out-cubic)"
@@ -215,7 +215,7 @@ export function PoolWeightChart({
             shadowContainerProps={{ shadow: 'none' }}
           >
             <Box
-              _groupHover={{ transform: 'scale(1.15) translateY(-50%)' }}
+              _groupHover={{ transform: 'scale(1.08) translateY(-50%)' }}
               position="absolute"
               top="50%"
               transform="translateY(-50%)"
