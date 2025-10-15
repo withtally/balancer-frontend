@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, VStack } from '@chakra-ui/react'
+import { Box, Grid, GridItem, VStack, HStack, Image } from '@chakra-ui/react'
 import { DefaultPageContainer } from '@repo/lib/shared/components/containers/DefaultPageContainer'
 import FadeInOnView from '@repo/lib/shared/components/containers/FadeInOnView'
 import Noise from '@repo/lib/shared/components/layout/Noise'
@@ -6,17 +6,67 @@ import { RadialPattern } from '@repo/lib/shared/components/zen/RadialPattern'
 import { LbpHeaderTitleDescription } from './LbpHeaderTitleDescription'
 import { LbpHeaderTimeInfo } from './LbpHeaderTimeInfo'
 import { LbpHeaderStats } from './LbpHeaderStats'
+import { ConnectWallet } from '@repo/lib/modules/web3/ConnectWallet'
+import { useUserAccount } from '@repo/lib/modules/web3/UserAccountProvider'
+import RecentTransactions from '@repo/lib/shared/components/other/RecentTransactions'
+import { UserSettings } from '@repo/lib/modules/user/settings/UserSettings'
+import { PROJECT_CONFIG } from '@repo/lib/config/getProjectConfig'
 
 export function LbpHeader() {
+  const { isConnected } = useUserAccount()
+  const {
+    options: { allowCreateWallet },
+  } = PROJECT_CONFIG
+
   return (
-    <Box borderBottom="1px solid" borderColor="border.lbp">
-      <Noise backgroundColor="#051212" overflow="hidden" position="relative" shadow="innerBase">
+    <Box pt="0">
+      {/* Top Navigation Bar */}
+      <Box bg="#051212" position="sticky" pt="0" top="0" zIndex="sticky">
+        <DefaultPageContainer py="0">
+          <HStack justify="space-between">
+            {/* Logo */}
+            <Box>
+              <Image
+                alt="Hyperwave"
+                height="32px"
+                src="/images/hyperwave/Hyperwave_logo_horizontal.svg"
+                width="136px"
+              />
+            </Box>
+
+            {/* Network and Wallet */}
+            <HStack spacing="sm">
+              {isConnected && (
+                <Box display={{ base: 'none', lg: 'block' }}>
+                  <RecentTransactions />
+                </Box>
+              )}
+              <Box display={{ base: 'none', lg: 'block' }}>
+                <UserSettings />
+              </Box>
+              <ConnectWallet
+                connectLabel={allowCreateWallet ? 'Connect' : 'Connect wallet'}
+                showCreateWalletButton={allowCreateWallet}
+              />
+            </HStack>
+          </HStack>
+        </DefaultPageContainer>
+      </Box>
+
+      {/* Header Content */}
+      <Noise
+        backgroundColor="#051212"
+        overflow="hidden"
+        position="relative"
+        pt="0"
+        shadow="innerBase"
+      >
         <DefaultPageContainer
-          pb={['xl', 'xl', '10']}
+          pb={['md', 'md', 'lg']}
           pr={{ base: '0 !important', md: 'md !important' }}
-          pt={['xl', '40px']}
+          pt="0"
         >
-          <Box display={{ base: 'none', md: 'block' }}>
+          <Box display={{ base: 'none', md: 'block' }} pt="0">
             <RadialPattern
               circleCount={8}
               height={600}
@@ -61,7 +111,7 @@ export function LbpHeader() {
             width={600}
           />
           <FadeInOnView animateOnce={false}>
-            <VStack align="start" w="full">
+            <VStack align="start" pt="0" w="full">
               <Grid gap="4" templateColumns={{ base: '1fr', md: '2fr 1fr' }} w="full">
                 <GridItem pr="2">
                   <LbpHeaderTitleDescription />

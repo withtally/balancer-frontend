@@ -6,8 +6,18 @@ import { LbpBenefitsScalesIcon } from '@repo/lib/shared/components/icons/lbp/Lbp
 import { LbpBenefitsChartIcon } from '@repo/lib/shared/components/icons/lbp/LbpBenefitsChartIcon'
 import { LbpBenefitsLightningIcon } from '@repo/lib/shared/components/icons/lbp/LbpBenefitsLightningIcon'
 import { LbpLearnMoreModal } from '../modal/LbpLearnMoreModal'
+import { ConnectWallet } from '@repo/lib/modules/web3/ConnectWallet'
+import { useUserAccount } from '@repo/lib/modules/web3/UserAccountProvider'
+import RecentTransactions from '@repo/lib/shared/components/other/RecentTransactions'
+import { UserSettings } from '@repo/lib/modules/user/settings/UserSettings'
+import { PROJECT_CONFIG } from '@repo/lib/config/getProjectConfig'
 
 export function HeaderBanner() {
+  const { isConnected } = useUserAccount()
+  const {
+    options: { allowCreateWallet },
+  } = PROJECT_CONFIG
+
   const fairPriceDescription = `
   The dynamic weight adjustment mechanism in LBPs prevent price manipulation
   and ensures natural price discovery. The gradual shift from a high token
@@ -36,88 +46,106 @@ export function HeaderBanner() {
         mb: 'xl',
       }}
     >
-      <HStack
-        alignItems={{ base: 'start', md: 'center' }}
-        flexDirection={{ base: 'column', lg: 'row' }}
-        justifyContent={{ base: 'start', lg: 'space-between' }}
-        p={{ base: 'lg', lg: 'xl' }}
-        spacing={{ base: 'md', lg: undefined }}
-        w="full"
-      >
-        <VStack
-          alignItems="start"
-          pt="sm"
-          spacing="30px"
-          w={{ base: 'full', lg: undefined }}
-          zIndex={1}
-        >
-          <VStack alignItems="start" spacing="ms">
-            <Box maxW="290px">
-              <Heading as="h1" color="#21F1A6" size="lg" sx={{ textWrap: 'nowrap' }}>
-                Create an LBP token sale
-              </Heading>
+      <VStack spacing="md" w="full">
+        {/* Wallet actions row */}
+        <HStack alignSelf="flex-end" justifyContent="flex-end" spacing="sm">
+          {isConnected && (
+            <Box display={{ base: 'none', lg: 'block' }}>
+              <RecentTransactions />
             </Box>
+          )}
+          <Box display={{ base: 'none', lg: 'block' }}>
+            <UserSettings />
+          </Box>
+          <ConnectWallet
+            connectLabel={allowCreateWallet ? 'Connect' : 'Connect wallet'}
+            showCreateWalletButton={allowCreateWallet}
+          />
+        </HStack>
 
-            <Text color="font.secondary" maxW="38ch" sx={{ textWrap: 'balance' }}>
-              A fair, transparent mechanism for price discovery that protects both project creators
-              and early supporters.
-            </Text>
-
-            <LbpLearnMoreModal buttonLabel="Learn more" />
-          </VStack>
-        </VStack>
-
-        <Stack
-          direction={{ base: 'column', md: 'row' }}
-          justifyContent="stretch"
-          spacing={{ base: 4, md: 2, lg: 4, xl: 8 }}
+        {/* Main content row */}
+        <HStack
+          alignItems={{ base: 'start', md: 'center' }}
+          flexDirection={{ base: 'column', lg: 'row' }}
+          justifyContent={{ base: 'start', lg: 'space-between' }}
+          spacing={{ base: 'md', lg: undefined }}
           w="full"
         >
-          <RadialPattern
-            circleCount={8}
-            height={600}
-            innerHeight={120}
-            innerWidth={1000}
-            left="350px"
-            padding="15px"
-            position="absolute"
-            right={{ base: -500, lg: -700, xl: -600, '2xl': -400 }}
-            top="-195px"
-            width={1500}
-          />
+          <VStack
+            alignItems="start"
+            pt="sm"
+            spacing="30px"
+            w={{ base: 'full', lg: undefined }}
+            zIndex={1}
+          >
+            <VStack alignItems="start" spacing="ms">
+              <Box maxW="290px">
+                <Heading as="h1" color="#21F1A6" size="lg" sx={{ textWrap: 'nowrap' }}>
+                  Create an LBP token sale
+                </Heading>
+              </Box>
 
-          <RadialPattern
-            bottom="-500px"
-            circleCount={10}
-            height={800}
-            innerHeight={150}
-            innerWidth={150}
-            left="-400px"
-            position="absolute"
-            width={800}
-            zIndex={0}
-          />
+              <Text color="font.secondary" maxW="38ch" sx={{ textWrap: 'balance' }}>
+                A fair, transparent mechanism for price discovery that protects both project
+                creators and early supporters.
+              </Text>
 
-          <FeatureLink
-            description={fairPriceDescription}
-            icon={<LbpBenefitsScalesIcon />}
-            title="Fair price discovery"
-            transformBackground="rotate(0deg)"
-          />
-          <FeatureLink
-            description={capitalEfficiencyDescription}
-            icon={<LbpBenefitsChartIcon />}
-            title="Capital efficiency"
-            transformBackground="rotate(90deg)"
-          />
-          <FeatureLink
-            description={immediateLiquidityDescription}
-            icon={<LbpBenefitsLightningIcon />}
-            title="Immediate liquidity"
-            transformBackground="rotate(-90deg)"
-          />
-        </Stack>
-      </HStack>
+              <LbpLearnMoreModal buttonLabel="Learn more" />
+            </VStack>
+          </VStack>
+
+          <Stack
+            direction={{ base: 'column', md: 'row' }}
+            justifyContent="stretch"
+            spacing={{ base: 4, md: 2, lg: 4, xl: 8 }}
+            w="full"
+          >
+            <RadialPattern
+              circleCount={8}
+              height={600}
+              innerHeight={120}
+              innerWidth={1000}
+              left="350px"
+              padding="15px"
+              position="absolute"
+              right={{ base: -500, lg: -700, xl: -600, '2xl': -400 }}
+              top="-195px"
+              width={1500}
+            />
+
+            <RadialPattern
+              bottom="-500px"
+              circleCount={10}
+              height={800}
+              innerHeight={150}
+              innerWidth={150}
+              left="-400px"
+              position="absolute"
+              width={800}
+              zIndex={0}
+            />
+
+            <FeatureLink
+              description={fairPriceDescription}
+              icon={<LbpBenefitsScalesIcon />}
+              title="Fair price discovery"
+              transformBackground="rotate(0deg)"
+            />
+            <FeatureLink
+              description={capitalEfficiencyDescription}
+              icon={<LbpBenefitsChartIcon />}
+              title="Capital efficiency"
+              transformBackground="rotate(90deg)"
+            />
+            <FeatureLink
+              description={immediateLiquidityDescription}
+              icon={<LbpBenefitsLightningIcon />}
+              title="Immediate liquidity"
+              transformBackground="rotate(-90deg)"
+            />
+          </Stack>
+        </HStack>
+      </VStack>
     </NoisyCard>
   )
 }
