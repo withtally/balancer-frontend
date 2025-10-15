@@ -151,6 +151,17 @@ export function GlueXLbpWidget({ pool, launchToken, hasDisabledInputs }: GlueXLb
         justifyContent: 'center',
       }}
     >
+      <h2
+        style={{
+          color: colors.lbp.teal.primary,
+          fontSize: '24px',
+          fontWeight: '600',
+          margin: '0 0 20px 0',
+          textAlign: 'center',
+        }}
+      >
+        Buy {launchToken.symbol}
+      </h2>
       {/* <WagmiProvider config={wagmiConfig} reconnectOnMount={false}> */}
       <GlueXWidget config={widgetConfig} />
       {/* </WagmiProvider> */}
