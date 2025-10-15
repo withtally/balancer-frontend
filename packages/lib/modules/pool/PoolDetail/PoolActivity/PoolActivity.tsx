@@ -151,8 +151,14 @@ function Content() {
           <PoolActivityViewType />
           <Box borderRadius="full" h="34px" shadow={isChartView ? '2xl' : 'none'} w="34px">
             <IconButton
+              _hover={{
+                borderColor: 'font.highlight',
+                color: 'font.highlight',
+              }}
               aria-label={isExpanded ? 'Minimize chart' : 'Expand chart'}
+              borderColor="font.lowContrast"
               borderRadius="full"
+              color="font.maxContrast"
               h="34px"
               icon={isExpanded ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
               onClick={() => setIsExpanded(!isExpanded)}
