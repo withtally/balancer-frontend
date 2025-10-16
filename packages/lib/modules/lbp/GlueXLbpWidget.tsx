@@ -65,10 +65,10 @@ export function GlueXLbpWidget({ pool, launchToken, hasDisabledInputs }: GlueXLb
             },
             {
               address: '0xB8CE59FC3717ada4C02eaDF9682A9e934F625ebb' as `0x${string}`,
-              symbol: 'USDT',
+              symbol: 'USDT0',
               decimals: 6,
               chainId: 999,
-              name: 'Tether USD',
+              name: 'USDT0',
               logoURI:
                 'https://assets.coingecko.com/coins/images/53705/standard/usdt0.jpg?1737086183',
             },
@@ -77,7 +77,7 @@ export function GlueXLbpWidget({ pool, launchToken, hasDisabledInputs }: GlueXLb
               symbol: 'USDE',
               decimals: 18,
               chainId: 999,
-              name: 'USD Ethena',
+              name: 'Ethena USDe',
               logoURI:
                 'https://assets.coingecko.com/coins/images/33613/standard/usde.png?1733810059',
             },
@@ -95,7 +95,7 @@ export function GlueXLbpWidget({ pool, launchToken, hasDisabledInputs }: GlueXLb
               symbol: 'USDHL',
               decimals: 6,
               chainId: 999,
-              name: 'USDHL',
+              name: 'Hyper USD',
               logoURI:
                 'https://assets.coingecko.com/coins/images/66679/standard/usdhl.jpg?1750242294',
             },
