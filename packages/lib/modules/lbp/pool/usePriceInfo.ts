@@ -135,6 +135,36 @@ export function getCurrentPrice(snapshots: LbpSnapshot[]) {
   throw new Error('Unreachable code')
 }
 
+export function getCurrentSnapshot(snapshots: LbpSnapshot[]): LbpSnapshot {
+  if (snapshots.length === 0) {
+    throw new Error('No snapshots available')
+  }
+
+  const currentTime = now()
+  if (isBefore(currentTime, snapshots[0].timestamp)) return snapshots[0]
+  if (isAfter(currentTime, snapshots[snapshots.length - 1].timestamp)) {
+    return snapshots[snapshots.length - 1]
+  }
+
+  for (let i = 0; i < snapshots.length; i++) {
+    if (isSameHour(currentTime, snapshots[i].timestamp)) return snapshots[i]
+    if (isSameHour(currentTime, snapshots[i + 1].timestamp)) {
+      return snapshots[i + 1]
+    }
+    if (
+      isWithinInterval(currentTime, {
+        start: snapshots[i].timestamp,
+        end: snapshots[i + 1].timestamp,
+      })
+    ) {
+      // Return the more recent snapshot when between two snapshots
+      return snapshots[i + 1]
+    }
+  }
+
+  throw new Error('Unreachable code')
+}
+
 export function min(prices: LbpPrice[]) {
   return Math.min(...prices.map(point => point.projectTokenPrice))
 }
