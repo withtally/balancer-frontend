@@ -28,9 +28,9 @@ export function usePoolStats(pool: GqlPoolLiquidityBootstrappingV3) {
   return {
     isLoading: snapshotsAreLoading || metadataIsLoading,
     fundsRaised:
-      (currentSnapshot.reserveTokenBalance - firstSnapshot.reserveTokenBalance) *
+      (lastSnapshot.reserveTokenBalance - firstSnapshot.reserveTokenBalance) *
       currentSnapshot.reserveTokenPrice,
-    marketCap: currentSnapshot.projectTokenPrice * (totalSupply || 0),
+    marketCap: currentSnapshot.projectTokenPrice * firstSnapshot.projectTokenBalance,
     fdv: currentSnapshot.projectTokenPrice * (totalSupply || 0),
     tvl: currentSnapshot.tvl || 0,
     totalVolume: lastSnapshot?.cumulativeVolume || 0,
