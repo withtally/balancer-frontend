@@ -7,7 +7,7 @@ export enum PoolActivityView {
 }
 
 export function usePoolActivityViewTypeLogic() {
-  const [poolActivityView, setPoolActivityView] = useState<PoolActivityView>(PoolActivityView.Chart)
+  const [poolActivityView, setPoolActivityView] = useState<PoolActivityView>(PoolActivityView.List)
 
   const isListView = useMemo(() => poolActivityView === PoolActivityView.List, [poolActivityView])
   const isChartView = useMemo(() => poolActivityView === PoolActivityView.Chart, [poolActivityView])
