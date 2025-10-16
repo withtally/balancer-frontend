@@ -45,7 +45,7 @@ export function LbpPriceChart() {
               }}
             />
           </Box>
-          <Text fontSize="sm">Projected price with no buys</Text>
+          <Text fontSize="sm">Price decay if no one buys</Text>
         </HStack>
         <Text color="font.secondary" fontSize="sm" ml={{ base: 0, md: 'auto' }}>
           {salePeriodText}
