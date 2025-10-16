@@ -41,6 +41,7 @@ export function GlueXLbpWidget({ pool, launchToken, hasDisabledInputs }: GlueXLb
               symbol: launchToken.symbol,
               decimals: 18,
               chainId: getChainId(pool.chain),
+              logoURI: '/images/hyperwave/Hyperwave_icon.png',
             },
           ],
         },
