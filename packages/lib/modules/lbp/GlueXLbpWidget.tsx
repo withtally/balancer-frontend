@@ -56,11 +56,11 @@ export function GlueXLbpWidget({ pool, launchToken, hasDisabledInputs }: GlueXLb
                 'https://assets.coingecko.com/coins/images/54469/standard/_UP3jBsi_400x400.jpg?1739905920',
             },
             {
-              address: '0xb88339CB7199b77E23DB6E890353E22632Ba630f' as `0x${string}`,
+              address: '0xb88339cb7199b77e23db6e890353e22632ba630f' as `0x${string}`,
               symbol: 'USDC',
               decimals: 6,
               chainId: 999,
-              name: 'USD Coin',
+              name: 'USDC',
               logoURI: 'https://assets.coingecko.com/coins/images/6319/thumb/USD_Coin_icon.png',
             },
             {
