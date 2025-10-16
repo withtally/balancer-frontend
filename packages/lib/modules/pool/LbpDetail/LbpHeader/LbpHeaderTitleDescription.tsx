@@ -42,7 +42,7 @@ export function LbpHeaderTitleDescription() {
         <VStack align="start" spacing="sm">
           <HStack spacing="md">
             <Heading color="white" fontSize="4xl" fontWeight="bold" lineHeight="36px">
-              {`${projectToken.symbol} token launch`} 🚀
+              {`${projectToken.symbol} token launch`}
             </Heading>
             <NetworkIcon chain={pool.chain} size={8} />
           </HStack>
